@@ -1,5 +1,0 @@
-ncsim(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
-ncsim: *E,DLNORD: Intermediate file for module worklib.ahb_isram_slave:module (SIG) <0x70c23170> could not be read (no such object).
-ncsim: *F,NOSIMU: Errors initializing simulation 'worklib.soc_top_tb:module'.
-ncsim: Memory Usage - 38.6M program + 162.4M data = 201.0M total (203.5M Peak)
-ncsim: CPU Usage - 0.0s system + 0.0s user = 0.0s total (9.5s, 0.5% cpu)
