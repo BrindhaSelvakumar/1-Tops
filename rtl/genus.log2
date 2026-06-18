@@ -1,0 +1,41 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 20.11-s111_1, built Mon Apr 26 02:27:38 PDT 2021
+Options: -legacy_ui 
+Date:    Thu May 14 22:01:24 2026
+Host:    mctsvlsi15.drmcet.ac.in (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (6cores*12cpus*1physical cpu*12th Gen Intel(R) Core(TM) i5-12500 18432KB) (15947936KB)
+PID:     23179
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (4 seconds elapsed).
+
+WARNING: This version of the tool is 1844 days old.
+legacy_genus:/> set_attribute library {slow.lib} /
+Error   : File error. [FILE-100] [set_attribute]
+        : Cannot open file 'slow.lib'
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [set_attribute]
+        : File 'slow.lib' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_attribute]
+        : The value 'slow.lib' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+1
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 27s, ST: 4s, FG: 4s, CPU: 4.8%}, MEM {curr: 0.8G, peak: 0.8G, phys curr: 0.2G, phys peak: 0.2G}, SYS {load: 0.6, cpu: 12, total: 15.2G, free: 0.8G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 57s, ST: 5s, FG: 5s, CPU: 5.2%}, MEM {curr: 0.8G, peak: 0.8G, phys curr: 0.2G, phys peak: 0.2G}, SYS {load: 0.6, cpu: 12, total: 15.2G, free: 0.8G}

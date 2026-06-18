@@ -1,0 +1,46 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 20.11-s111_1, built Mon Apr 26 02:27:38 PDT 2021
+Options: -legacy_ui 
+Date:    Thu May 14 21:52:31 2026
+Host:    mctsvlsi15.drmcet.ac.in (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (6cores*12cpus*1physical cpu*12th Gen Intel(R) Core(TM) i5-12500 18432KB) (15947936KB)
+PID:     22135
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis (6 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (4 seconds elapsed).
+
+WARNING: This version of the tool is 1844 days old.
+legacy_genus:/> read_hdl -sv -f filelist.f
+    always @(posedge PCLK or negedge PRESETn) begin
+                                                  |
+Warning : An 'if' statement is required at the top of an always block to infer a latch or flip-flop. [VLOGPT-46]
+        : in file './peripherals/apb_spi_master.v' on line 38, column 51.
+        : The supported syntax for asynchronous set-reset on a flop-flop is:
+    reg data_out;
+    always @(posedge clock or posedge reset)
+        if ( reset )
+            data_out = 1'b1;
+        else
+            data_out = 1'b0.
+legacy_genus:/> elaborate soc_top
+Error   : Elaborate error; No target technology library was loaded. [LBR-116] [elaborate]
+        : No target technology library was loaded.
+        : Tool couldn't read technology library before elaborate. Try to load the libraries by setting root attribute to "library" before elaborate.
+1
+legacy_genus:/> check_design
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [check_design]
+        : There is no design here.
+        : A design must first be read in with 'read_hdl' command and elaborated with 'elaborate' command.
+Failed on check_design

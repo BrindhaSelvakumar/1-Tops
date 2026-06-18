@@ -1,0 +1,87 @@
+xrun(64): 20.09-s012: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s012: Started on Jun 13, 2026 at 10:08:38 IST
+xrun
+	-sv
+	alu_32.v
+	m_extension_unit.v
+	execute_stage.v
+	execute_stage_tb.sv
+	-coverage all
+	-covoverwrite
+Recompiling... reason: file './m_extension_unit.v' is newer than expected.
+	expected: Wed May  6 15:21:57 2026
+	actual:   Sat Jun 13 10:08:30 2026
+file: m_extension_unit.v
+	module worklib.m_extension_unit:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		execute_stage_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+	Extracting FSMs for coverage:
+		worklib.prefix_adder_32
+		worklib.add_32
+		worklib.alu_32
+		worklib.m_extension_unit
+		worklib.execute_stage
+		worklib.execute_stage_tb
+	Total FSMs extracted = 0
+	Building instance overlay tables: .................... Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+xmelab: *W,COVDCL: By default expression coverage is scored only for Verilog logical operators (|| and &&) and VHDL logical operators (OR, AND, NOR, and NAND), and is scored only in condition expressions. To score coverage for other operators and for expressions in other statements, use the "set_expr_coverable_operators" and "set_expr_coverable_statements" coverage configuration file commands with suitable options at elaboration.
+	Generating native compiled code:
+		worklib.m_extension_unit:v <0x6391538c>
+			streams:   9, words:  7537
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 6       6
+		Registers:              33      33
+		Scalar wires:           21       -
+		Vectored wires:         38       -
+		Named events:            2       2
+		Always blocks:          14      14
+		Initial blocks:          3       3
+		Cont. assignments:      21      34
+		Pseudo assignments:     20      20
+		Assertions:              2       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.execute_stage_tb:sv
+Loading snapshot worklib.execute_stage_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> run
+TEST: ADD
+TEST: FORWARDING
+TEST: BEQ
+xmsim: *E,ERRSEV (./execute_stage_tb.sv,146): (time 80 NS).
+execute_stage_tb.test_branch_beq
+BEQ FAILED
+TEST: BNE
+TEST: JUMP
+xmsim: *E,ERRSEV (./execute_stage_tb.sv,183): (time 120 NS).
+execute_stage_tb.test_jump
+JUMP FAILED
+TEST: M EXT
+xmsim: *E,ERRSEV (./execute_stage_tb.sv,201): (time 150 NS).
+execute_stage_tb.test_m_extension
+M EXT FAILED
+ALL TESTS DONE
+Simulation complete via $finish(1) at time 200 NS + 0
+./execute_stage_tb.sv:90         $finish;
+xcelium> exit
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  execute_stage_tb(execute_stage_tb)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_2de65fcc_75d90bc6.ucm
+  data               :  ./cov_work/scope/test/icc_2de65fcc_75d90bc6.ucd
+TOOL:	xrun(64)	20.09-s012: Exiting on Jun 13, 2026 at 10:08:44 IST  (total: 00:00:06)

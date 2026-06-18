@@ -1,0 +1,102 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2019.09
+# platform  : Linux 3.10.0-1160.el7.x86_64
+# version   : 2019.09p002 64 bits
+# build date: 2019.11.26 18:17:27 PST
+#----------------------------------------
+# started Thu May 14 21:49:27 IST 2026
+# hostname  : mctsvlsi15.drmcet.ac.in
+# pid       : 21782
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:35419' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/student/Desktop/1tops/rtl/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/student/Desktop/1tops/rtl/jgproject/.tmp/.initCmds.tcl' 'lint.tcl' '-hidden' '/home/student/Desktop/1tops/rtl/jgproject/.tmp/.postCmds.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2019 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /home/student/Desktop/1tops/rtl/jgproject/sessionLogs/session_0
+
+/home/student/Desktop/1tops/rtl/jgproject/jg.log
+INFO: successfully checked out license "jasper_fao".
+INFO: reading configuration file "/home/student/.config/jasper/jaspergold.conf".
+% analyze -sv -f filelist.f
+[-- (VERI-1482)] Analyzing Verilog file '/home/install/JASPER1909/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './soc_top.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/ex_mem_reg.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/execute_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/decode_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/if_id_reg.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/main_ctrl.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/id_ex_reg.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/hazard_unit.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/forwarding_unit.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/fetch_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/alu_ctrl_32.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/alu_32.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/memory_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/sign_gen.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/register_f.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/prefix_adder_32.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/m_extension_unit.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/add_32.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/risc_core_top.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/writeback_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/mem_wb_reg.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_decoder.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_dbus_decoder.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_boot_rom.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_ibus_decoder.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_isram_slave.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_slave_imux.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_dsram_slave.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_slave_dmux.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/uart_rx.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/uart_tx.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_gpio.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_timer.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/timer_core.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_spi.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_clic.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_plic.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_spi_master.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_uart.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/sync_fifo.v'
+[-- (VERI-1482)] Analyzing Verilog file './bridge/ahb_apb_bridge.v'
+[-- (VERI-1482)] Analyzing Verilog file './bridge/apb_decoder.v'
+% elaborate -top soc_top -bbox_a
+ERROR (ESW041): A required argument is missing.
+
+ERROR: problem encountered at line 2 in file lint.tcl
+
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.

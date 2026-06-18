@@ -1,0 +1,64 @@
+2026-06-08 17:00:44.432999 (15337) main____ INFO    ----------------------------------------
+2026-06-08 17:00:44.437352 (15337) main____ INFO    JasperGold version info
+2026-06-08 17:00:44.437377 (15337) main____ INFO      tool      : JasperGold 2019.09
+2026-06-08 17:00:44.437393 (15337) main____ INFO      version   : 2019.09p002 64 bits
+2026-06-08 17:00:44.437404 (15337) main____ INFO      build date: 2019.11.26 18:17:27 PST
+2026-06-08 17:00:44.437411 (15337) main____ INFO    ----------------------------------------
+2026-06-08 17:00:44.437418 (15337) main____ INFO    Runtime info:
+2026-06-08 17:00:44.437427 (15337) main____ INFO      platform  : Linux 3.10.0-1160.el7.x86_64 x86_64
+2026-06-08 17:00:44.437439 (15337) main____ INFO      hostname  : mctsvlsi15.drmcet.ac.in
+2026-06-08 17:00:44.437447 (15337) main____ INFO      pid       : 15337
+2026-06-08 17:00:44.437454 (15337) main____ INFO      arguments : '-style' 'windows'
+2026-06-08 17:00:44.437461 (15337) main____ INFO    ----------------------------------------
+2026-06-08 17:00:44.437467 (15337) main____ INFO    System resource limits info:
+2026-06-08 17:00:44.437475 (15337) main____ INFO      virtual memory: unlimited
+2026-06-08 17:00:44.437483 (15337) main____ INFO      cpu time      : unlimited
+2026-06-08 17:00:44.437506 (15337) main____ INFO      stack size    : 8388608 B
+2026-06-08 17:00:44.437517 (15337) main____ INFO      core file size: 0 B
+2026-06-08 17:00:44.437533 (15337) main____ INFO      open files    : 1024
+2026-06-08 17:00:44.437540 (15337) main____ INFO      file size     : unlimited
+2026-06-08 17:00:44.437547 (15337) main____ INFO    ----------------------------------------
+2026-06-08 17:00:44.437553 (15337) main____ INFO    Memory statistics:
+2026-06-08 17:00:44.437561 (15337) main____ INFO      total physical memory  : 15947936 kB
+2026-06-08 17:00:44.437567 (15337) main____ INFO      free physical memory   : 11012888 kB
+2026-06-08 17:00:44.437574 (15337) main____ INFO      committed address space: 5170768 kB
+2026-06-08 17:00:44.437580 (15337) main____ INFO    ----------------------------------------
+2026-06-08 17:00:44.437633 (15337) main____ INFO    Important environment variables:
+2026-06-08 17:00:44.437651 (15337) main____ INFO      CDS_LIC_FILE   : '5280@14.139.1.126'
+2026-06-08 17:00:44.437663 (15337) main____ INFO      DISPLAY        : ':0'
+2026-06-08 17:00:44.437673 (15337) main____ INFO      EDITOR         : 'gedit'
+2026-06-08 17:00:44.437683 (15337) main____ INFO      LM_LICENSE_FILE: '1717@14.139.1.126'
+2026-06-08 17:00:44.437689 (15337) main____ INFO    ----------------------------------------
+2026-06-08 17:00:44.455529 (15337) lic_core INFO    Initializing license system ...
+2026-06-08 17:00:44.536883 (15337) lic_core INFO    ... license system initialized.
+2026-06-08 17:00:44.604476 (15337) lic__man INFO    Claim 'main' for <ui>.
+2026-06-08 17:00:44.604577 (15337) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2026-06-08 17:00:45.680071 (15337) lic_core INFO    ... (1) checkout succeeded
+2026-06-08 17:00:45.680213 (15337) lic__man INFO    Claim 'fpv' for <ui>.
+2026-06-08 17:00:45.680255 (15337) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2026-06-08 17:00:46.423906 (15337) lic_core INFO    ... (2) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
+2026-06-08 17:00:46.423979 (15337) lic_core INFO    (3) checking out 'jasper_fao' ...
+2026-06-08 17:00:48.526534 (15337) lic_core INFO    ... (3) checkout succeeded
+2026-06-08 17:00:50.595754 (15337) lic__man INFO    Claim 'fpv' for <ui>.
+2026-06-08 17:00:50.879164 (15337) lic__man INFO    Unclaim 'fpv' for <ui>.
+2026-06-08 17:00:50.879194 (15337) lic__man INFO    Claim 'fpv' for <ui>.
+2026-06-08 17:00:50.887749 (15337) session_ INFO    Starting analysis session with session id 'session_0' (launcher: <local>) ...
+2026-06-08 17:00:50.888491 (15337) session_ INFO    Analysis session with session id 'session_0' started (pid: 15362)
+2026-06-08 17:01:06.694103 (15337) session_ INFO    Analysis session 'session_0' connected to the console (host: 127.0.0.1:57916)
+2026-06-08 17:02:30.708681 (15337) lic__man INFO    Unclaim 'fpv' for <ui>.
+2026-06-08 17:02:30.708712 (15337) lic__man INFO    Claim 'superlint' for <ui>.
+2026-06-08 17:02:30.708741 (15337) lic_core INFO    (4) checking out 'jasper_afl' ...
+2026-06-08 17:02:43.515060 (15337) lic_core INFO    ... (4) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
+2026-06-08 17:02:43.515144 (15337) lic_core INFO    (5) checking out 'jasper_dao' ...
+2026-06-08 17:02:44.607434 (15337) lic_core INFO    ... (5) checkout succeeded
+2026-06-08 17:02:44.696979 (15337) lic__man INFO    Unclaim 'superlint' for <ui>.
+2026-06-08 17:02:44.697047 (15337) lic__man INFO    Claim 'fpv' for <ui>.
+2026-06-08 17:02:44.703351 (15337) lic__man INFO    Unclaim 'fpv' for <ui>.
+2026-06-08 17:02:44.703378 (15337) lic__man INFO    Claim 'superlint' for <ui>.
+2026-06-08 17:02:44.708431 (15337) lic__man INFO    Unclaim 'superlint' for <ui>.
+2026-06-08 17:02:44.708452 (15337) lic__man INFO    Claim 'fpv' for <ui>.
+2026-06-08 17:02:44.716087 (15337) lic__man INFO    Unclaim 'fpv' for <ui>.
+2026-06-08 17:02:44.716112 (15337) lic__man INFO    Claim 'superlint' for <ui>.
+2026-06-08 17:03:25.813856 (15337) main____ INFO    About to exit: requested from GUI
+2026-06-08 17:03:26.142924 (15337) session_ INFO    Analysis session 'session_0' disconnected.
+2026-06-08 17:03:26.154834 (15337) main____ INFO    Exiting with status 0.

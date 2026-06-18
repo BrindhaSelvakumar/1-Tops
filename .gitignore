@@ -1,0 +1,30 @@
+# EDA simulator and tool generated output
+INCA_libs/
+xcelium.d/
+waves.shm/
+cov_work/
+jgproject/work/
+jgproject/work.bak/
+jgproject/sessionLogs/
+jgproject/sessionLogs.bak/
+jgproject/.tmp/
+
+# Generated databases and binary dumps
+*.pak
+*.dump
+*.apdb
+*.ddk
+*.ucm
+*.ucd
+*.shm
+
+# Tool locks and transient state
+*.lock
+.history.lock
+.xmlib.lock
+.xmrun.lock
+.ncv.lock
+
+# Local editor/system files
+.DS_Store
+Thumbs.db

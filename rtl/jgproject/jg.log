@@ -1,0 +1,174 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2019.09
+# platform  : Linux 3.10.0-1160.el7.x86_64
+# version   : 2019.09p002 64 bits
+# build date: 2019.11.26 18:17:27 PST
+#----------------------------------------
+# started Thu May 14 21:51:06 IST 2026
+# hostname  : mctsvlsi15.drmcet.ac.in
+# pid       : 21986
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:42717' '-nowindow' '-style' 'windows' '-exitonerror' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/student/Desktop/1tops/rtl/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/student/Desktop/1tops/rtl/jgproject/.tmp/.initCmds.tcl' 'lint.tcl' '-hidden' '/home/student/Desktop/1tops/rtl/jgproject/.tmp/.postCmds.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2019 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /home/student/Desktop/1tops/rtl/jgproject/sessionLogs/session_0
+
+/home/student/Desktop/1tops/rtl/jgproject/jg.log
+INFO: successfully checked out license "jasper_fao".
+INFO: reading configuration file "/home/student/.config/jasper/jaspergold.conf".
+% analyze -sv -f filelist.f
+[-- (VERI-1482)] Analyzing Verilog file '/home/install/JASPER1909/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './soc_top.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/ex_mem_reg.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/execute_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/decode_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/if_id_reg.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/main_ctrl.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/id_ex_reg.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/hazard_unit.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/forwarding_unit.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/fetch_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/alu_ctrl_32.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/alu_32.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/memory_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/sign_gen.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/register_f.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/prefix_adder_32.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/m_extension_unit.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/add_32.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/risc_core_top.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/writeback_stage.v'
+[-- (VERI-1482)] Analyzing Verilog file './risc/mem_wb_reg.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_decoder.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_dbus_decoder.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_boot_rom.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_ibus_decoder.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_isram_slave.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_slave_imux.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_dsram_slave.v'
+[-- (VERI-1482)] Analyzing Verilog file './ahbmemory/ahb_slave_dmux.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/uart_rx.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/uart_tx.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_gpio.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_timer.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/timer_core.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_spi.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_clic.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_plic.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_spi_master.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/apb_uart.v'
+[-- (VERI-1482)] Analyzing Verilog file './peripherals/sync_fifo.v'
+[-- (VERI-1482)] Analyzing Verilog file './bridge/ahb_apb_bridge.v'
+[-- (VERI-1482)] Analyzing Verilog file './bridge/apb_decoder.v'
+% elaborate -top soc_top
+INFO (ISW003): Top module name is "soc_top".
+[INFO (HIER-8002)] ./soc_top.v(383): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] ./soc_top.v(3): compiling module 'soc_top'
+[INFO (VERI-1018)] ./risc/risc_core_top.v(3): compiling module 'risc_core_top'
+[INFO (VERI-1018)] ./risc/fetch_stage.v(3): compiling module 'fetch_stage'
+[INFO (VERI-1018)] ./risc/if_id_reg.v(3): compiling module 'if_id_reg'
+[INFO (VERI-1018)] ./risc/decode_stage.v(2): compiling module 'decode_stage'
+[INFO (VERI-1018)] ./risc/sign_gen.v(3): compiling module 'sign_gen'
+[INFO (VERI-1018)] ./risc/register_f.v(2): compiling module 'register_f'
+[WARN (VERI-1060)] ./risc/register_f.v(20): 'initial' construct ignored
+[INFO (VERI-1018)] ./risc/main_ctrl.v(2): compiling module 'main_ctrl'
+[INFO (VERI-1018)] ./risc/alu_ctrl_32.v(3): compiling module 'alu_ctrl_32'
+[INFO (VERI-1018)] ./risc/hazard_unit.v(3): compiling module 'hazard_unit'
+[INFO (VERI-1018)] ./risc/id_ex_reg.v(3): compiling module 'id_ex_reg'
+[INFO (VERI-1018)] ./risc/forwarding_unit.v(3): compiling module 'forwarding_unit'
+[INFO (VERI-1018)] ./risc/execute_stage.v(3): compiling module 'execute_stage'
+[INFO (VERI-1018)] ./risc/alu_32.v(3): compiling module 'alu_32'
+[INFO (VERI-1018)] ./risc/add_32.v(3): compiling module 'add_32'
+[INFO (VERI-1018)] ./risc/prefix_adder_32.v(3): compiling module 'prefix_adder_32'
+[INFO (VERI-1018)] ./risc/m_extension_unit.v(3): compiling module 'm_extension_unit'
+[INFO (VERI-1018)] ./risc/ex_mem_reg.v(3): compiling module 'ex_mem_reg'
+[INFO (VERI-1018)] ./risc/memory_stage.v(3): compiling module 'memory_stage'
+[INFO (VERI-1018)] ./risc/mem_wb_reg.v(3): compiling module 'mem_wb_reg'
+[INFO (VERI-1018)] ./risc/writeback_stage.v(3): compiling module 'writeback_stage'
+[INFO (VERI-1018)] ./ahbmemory/ahb_ibus_decoder.v(3): compiling module 'ahb_ibus_decoder'
+[INFO (VERI-1018)] ./ahbmemory/ahb_slave_imux.v(3): compiling module 'ahb_slave_imux'
+[INFO (VERI-1018)] ./ahbmemory/ahb_boot_rom.v(3): compiling module 'ahb_boot_rom:(ROM_INIT_FILE="boot.mem")'
+[WARN (VERI-9033)] ./ahbmemory/ahb_boot_rom.v(24): array rom_data (size 32768) automatically BLACK-BOXED. Use the "elaborate -bbox_a" command to prevent automatic black-boxing.
+[WARN (VERI-1060)] ./ahbmemory/ahb_boot_rom.v(37): 'initial' construct ignored
+[WARN (VDB-1002)] ./ahbmemory/ahb_boot_rom.v(24): net 'rom_data' does not have a driver
+[INFO (VERI-1018)] ./ahbmemory/ahb_isram_slave.v(3): compiling module 'ahb_isram_slave:(MEM_INIT_FILE="program.mem")'
+[WARN (VERI-9033)] ./ahbmemory/ahb_isram_slave.v(24): array ram (size 524288) automatically BLACK-BOXED. Use the "elaborate -bbox_a" command to prevent automatic black-boxing.
+[WARN (VERI-1060)] ./ahbmemory/ahb_isram_slave.v(44): 'initial' construct ignored
+[INFO (VERI-1018)] ./ahbmemory/ahb_dbus_decoder.v(3): compiling module 'ahb_dbus_decoder'
+[INFO (VERI-1018)] ./ahbmemory/ahb_slave_dmux.v(3): compiling module 'ahb_slave_dmux'
+[INFO (VERI-1018)] ./ahbmemory/ahb_isram_slave.v(3): compiling module 'ahb_isram_slave'
+[INFO (VERI-1018)] ./bridge/ahb_apb_bridge.v(3): compiling module 'ahb_apb_bridge'
+[INFO (VERI-1018)] ./bridge/apb_decoder.v(2): compiling module 'apb_decoder'
+[INFO (VERI-1018)] ./peripherals/apb_spi_master.v(3): compiling module 'apb_spi_master'
+[WARN (VERI-1167)] ./peripherals/apb_spi_master.v(63): if-condition does not match any sensitivity list edge
+[WARN (VERI-1466)] ./peripherals/apb_spi_master.v(63): assignment under multiple single edges is not supported for synthesis
+[WARN (VERI-1209)] ./peripherals/apb_spi_master.v(96): expression size 32 truncated to fit in target size 6
+[WARN (VERI-1209)] ./peripherals/apb_spi_master.v(105): expression size 32 truncated to fit in target size 8
+[INFO (VERI-1018)] ./peripherals/apb_uart.v(4): compiling module 'apb_uart'
+[INFO (VERI-1018)] ./peripherals/uart_rx.v(3): compiling module 'uart_rx'
+[INFO (VERI-1018)] ./peripherals/uart_tx.v(3): compiling module 'uart_tx'
+[INFO (VERI-1018)] ./peripherals/sync_fifo.v(3): compiling module 'sync_fifo'
+[INFO (VERI-1018)] ./peripherals/apb_gpio.v(3): compiling module 'apb_gpio'
+[INFO (VERI-1018)] ./peripherals/apb_timer.v(3): compiling module 'apb_timer'
+[INFO (VERI-1018)] ./peripherals/timer_core.v(2): compiling module 'timer_core'
+[INFO (VERI-1018)] ./peripherals/apb_clic.v(2): compiling module 'apb_clic'
+[INFO (VERI-1018)] ./peripherals/apb_spi.v(3): compiling module 'apb_spi'
+[WARN (VDB-1000)] ./peripherals/apb_spi.v(70): net 'stored_data[31]' is constantly driven from multiple places
+[WARN (VDB-1001)] ./peripherals/apb_spi.v(102): another driver from here
+[INFO (VERI-1018)] ./peripherals/apb_plic.v(3): compiling module 'apb_plic'
+WARNING (WNL018): ./risc/m_extension_unit.v(11): multiply mult_32s_32s (size 64) automatically black boxed.
+    Use the "elaborate -bbox_mul" command to prevent automatic black-boxing.
+WARNING (WNL018): ./risc/m_extension_unit.v(12): multiply mult_64u_64u (size 128) automatically black boxed.
+    Use the "elaborate -bbox_mul" command to prevent automatic black-boxing.
+WARNING (WNL018): ./risc/m_extension_unit.v(13): multiply mult_33s_33s (size 66) automatically black boxed.
+    Use the "elaborate -bbox_mul" command to prevent automatic black-boxing.
+WARNING (WNL032): ./risc/m_extension_unit.v(20): divider div_32u_32u (size 32) automatically black boxed.
+    Use the "elaborate -bbox_div" command to prevent automatic black-boxing.
+WARNING (WNL033): ./risc/m_extension_unit.v(21): modulus operator mod_32u_32u (size 32) automatically black boxed.
+    Use the "elaborate -bbox_mod" command to prevent automatic black-boxing.
+WARNING (WNL032): ./risc/m_extension_unit.v(29): divider div_32u_32u (size 32) automatically black boxed.
+    Use the "elaborate -bbox_div" command to prevent automatic black-boxing.
+WARNING (WNL033): ./risc/m_extension_unit.v(30): modulus operator mod_32u_32u (size 32) automatically black boxed.
+    Use the "elaborate -bbox_mod" command to prevent automatic black-boxing.
+INFO (IMDS005): Number of multiple-driven bits in design: 32. Use "get_design_info -list multiple_driven" for more information.
+soc_top
+[<embedded>] % set_engine_mode {Lint}
+ERROR (EPF051): Unknown engine(s): Lint
+
+ERROR: problem encountered at line 3 in file lint.tcl
+
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.

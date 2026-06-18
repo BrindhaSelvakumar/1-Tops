@@ -1,0 +1,46 @@
+2026-05-14 21:49:24.583098 (21768) main____ INFO    ----------------------------------------
+2026-05-14 21:49:24.583142 (21768) main____ INFO    JasperGold version info
+2026-05-14 21:49:24.583147 (21768) main____ INFO      tool      : JasperGold 2019.09
+2026-05-14 21:49:24.583151 (21768) main____ INFO      version   : 2019.09p002 64 bits
+2026-05-14 21:49:24.583154 (21768) main____ INFO      build date: 2019.11.26 18:17:27 PST
+2026-05-14 21:49:24.583156 (21768) main____ INFO    ----------------------------------------
+2026-05-14 21:49:24.583158 (21768) main____ INFO    Runtime info:
+2026-05-14 21:49:24.583161 (21768) main____ INFO      platform  : Linux 3.10.0-1160.el7.x86_64 x86_64
+2026-05-14 21:49:24.583164 (21768) main____ INFO      hostname  : mctsvlsi15.drmcet.ac.in
+2026-05-14 21:49:24.583167 (21768) main____ INFO      pid       : 21768
+2026-05-14 21:49:24.583169 (21768) main____ INFO      arguments : '-style' 'windows' '-batch' 'lint.tcl'
+2026-05-14 21:49:24.583172 (21768) main____ INFO    ----------------------------------------
+2026-05-14 21:49:24.583174 (21768) main____ INFO    System resource limits info:
+2026-05-14 21:49:24.583176 (21768) main____ INFO      virtual memory: unlimited
+2026-05-14 21:49:24.583178 (21768) main____ INFO      cpu time      : unlimited
+2026-05-14 21:49:24.583185 (21768) main____ INFO      stack size    : 8388608 B
+2026-05-14 21:49:24.583189 (21768) main____ INFO      core file size: 0 B
+2026-05-14 21:49:24.583194 (21768) main____ INFO      open files    : 1024
+2026-05-14 21:49:24.583196 (21768) main____ INFO      file size     : unlimited
+2026-05-14 21:49:24.583198 (21768) main____ INFO    ----------------------------------------
+2026-05-14 21:49:24.583200 (21768) main____ INFO    Memory statistics:
+2026-05-14 21:49:24.583203 (21768) main____ INFO      total physical memory  : 15947936 kB
+2026-05-14 21:49:24.583205 (21768) main____ INFO      free physical memory   : 969856 kB
+2026-05-14 21:49:24.583207 (21768) main____ INFO      committed address space: 11169344 kB
+2026-05-14 21:49:24.583209 (21768) main____ INFO    ----------------------------------------
+2026-05-14 21:49:24.583224 (21768) main____ INFO    Important environment variables:
+2026-05-14 21:49:24.583229 (21768) main____ INFO      CDS_LIC_FILE   : '5280@14.139.1.126'
+2026-05-14 21:49:24.583232 (21768) main____ INFO      DISPLAY        : ':0'
+2026-05-14 21:49:24.583235 (21768) main____ INFO      EDITOR         : 'gedit'
+2026-05-14 21:49:24.583238 (21768) main____ INFO      LM_LICENSE_FILE: '1717@14.139.1.126'
+2026-05-14 21:49:24.583240 (21768) main____ INFO    ----------------------------------------
+2026-05-14 21:49:24.583556 (21768) lic_core INFO    Initializing license system ...
+2026-05-14 21:49:24.583900 (21768) lic_core INFO    ... license system initialized.
+2026-05-14 21:49:24.584843 (21768) lic__man INFO    Claim 'fpv' for <ui>.
+2026-05-14 21:49:24.584870 (21768) lic_core INFO    (1) checking out 'jasper_fpv' ...
+2026-05-14 21:49:25.368916 (21768) lic_core INFO    ... (1) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
+2026-05-14 21:49:25.368992 (21768) lic_core INFO    (2) checking out 'jasper_fao' ...
+2026-05-14 21:49:26.881554 (21768) lic_core INFO    ... (2) checkout succeeded
+2026-05-14 21:49:26.893723 (21768) session_ INFO    Starting analysis session with session id 'session_0' (launcher: <local>) ...
+2026-05-14 21:49:26.894143 (21768) session_ INFO    Analysis session with session id 'session_0' started (pid: 21782)
+2026-05-14 21:49:28.126962 (21768) session_ INFO    Analysis session 'session_0' connected to the console (host: 127.0.0.1:54706)
+2026-05-14 21:49:28.370231 (21768) main____ INFO    About to exit: request to exit with status 1 received from analysis session 'session_0'
+2026-05-14 21:49:28.810714 (21768) session_ INFO    Analysis session 'session_0' disconnected.
+2026-05-14 21:49:28.810832 (21768) lic__man INFO    Unclaim everything for 'session_0'.
+2026-05-14 21:49:28.810902 (21768) session_ INFO    Process for analysis session 'session_0' has exited with exit status '1'.
+2026-05-14 21:49:30.468760 (21768) main____ INFO    Exiting with status 1.

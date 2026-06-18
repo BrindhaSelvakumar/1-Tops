@@ -1,0 +1,56 @@
+xrun(64): 20.09-s012: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s012: Started on May 14, 2026 at 21:41:36 IST
+xrun
+	-sv
+	-elaborate
+	-f filelist.f
+		./soc_top.v
+		./risc/ex_mem_reg.v
+		./risc/execute_stage.v
+		./risc/decode_stage.v
+		./risc/if_id_reg.v
+		./risc/main_ctrl.v
+		./risc/id_ex_reg.v
+		./risc/hazard_unit.v
+		./risc/forwarding_unit.v
+		./risc/fetch_stage.v
+		./risc/alu_ctrl_32.v
+		./risc/alu_32.v
+		./risc/memory_stage.v
+		./risc/sign_gen.v
+		./risc/register_f.v
+		./risc/prefix_adder_32.v
+		./risc/m_extension_unit.v
+		./risc/add_32.v
+		./risc/risc_core_top.v
+		./risc/writeback_stage.v
+		./risc/mem_wb_reg.v
+		./ahbmemory/ahb_decoder.v
+		./ahbmemory/ahb_dbus_decoder.v
+		./ahbmemory/ahb_boot_rom.v
+		./ahbmemory/ahb_ibus_decoder.v
+		./ahbmemory/ahb_isram_slave.v
+		./ahbmemory/ahb_slave_imux.v
+		./ahbmemory/ahb_dsram_slave.v
+		./ahbmemory/ahb_slave_dmux.v
+		./peripherals/uart_rx.v
+		./peripherals/uart_tx.v
+		./peripherals/apb_gpio.v
+		./peripherals/apb_timer.v
+		./peripherals/timer_core.v
+		./peripherals/apb_spi.v
+		./peripherals/apb_clic.v
+		./peripherals/apb_plic.v
+		./peripherals/apb_spi_master.v
+		./peripherals/apb_uart.v
+		./peripherals/sync_fifo.v
+		./bridge/ahb_apb_bridge.v
+		./bridge/apb_decoder.v
+		./soc_top_tb.sv
+	-access +rwc
+	-errormax 50
+	-warn_multiple_driver
+	-warn_all
+	-logfile lint_strict.log
+xrun: *E,BDOPT: Unknown option -warn_all.
+TOOL:	xrun(64)	20.09-s012: Exiting on May 14, 2026 at 21:41:36 IST  (total: 00:00:00)

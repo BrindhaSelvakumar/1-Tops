@@ -1,0 +1,29 @@
+TOOL:	xrun	20.09-s012: Started on Jun 05, 2026 at 11:22:47 IST
+TOOL:	xrun(64)	20.09-s012: Started on Jun 05, 2026 at 11:22:47 IST
+xrun(64): 20.09-s012: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+Loading snapshot worklib.tb_risc_core:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> run
+PC=00010000 | ALU=00000000
+PC=00000000 | ALU=00000000
+PC=00000000 | ALU=00000000
+PC=00000000 | ALU=00000005
+PC=00000004 | ALU=00000001
+PC=00000008 | ALU=00000005
+PC=0000000c | ALU=00000005
+PC=00000010 | ALU=00000000
+PC=00000014 | ALU=00000000
+PC=00000018 | ALU=00000000
+PC=0000001c | ALU=00000000
+PC=00000020 | ALU=00000000
+PC=00000024 | ALU=00000000
+PC=00000028 | ALU=00000000
+PC=0000002c | ALU=00000000
+PC=00000030 | ALU=00000000
+PC=00000034 | ALU=00000000
+PC=00000038 | ALU=00000000
+Simulation complete via $finish(1) at time 200 NS + 0
+./tb_risc_core.sv:87         $finish;
+xcelium> exit
+TOOL:	xrun(64)	20.09-s012: Exiting on Jun 05, 2026 at 11:22:52 IST  (total: 00:00:05)

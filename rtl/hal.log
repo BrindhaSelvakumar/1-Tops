@@ -1,0 +1,26 @@
+hal(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+hal: Options:   -cdslib /home/student/Desktop/1tops/rtl/cds.lib -logfile hal.log worklib.soc_top_tb:module.
+hal: Snapshot:  worklib.soc_top_tb:module.
+hal: Workspace: /home/student/Desktop/1tops/rtl.
+hal: Date: Tue May 12 21:02:27 IST 2026.
+
+hal: Running on elaborated SNAPSHOT.....
+
+  ==========================================================================
+Performing lint checks 
+
+halcheck(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+visadev(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+visadev: *E,DLNORD: Intermediate file for module worklib.ahb_isram_slave:module (SIG) <0x70c23170> could not be read (no such object).
+
+Errors in initializing snapshot worklib.soc_top_tb:module
+
+Analysis summary :
+
+Analysis failed.
+
+ ==========================================================================
+
+To analyze results, run following command :
+    ncbrowse -64bit -cdslib /home/student/Desktop/1tops/rtl/cds.lib -sortby severity -sortby category -sortby tag hal.log
+

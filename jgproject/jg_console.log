@@ -1,0 +1,50 @@
+2026-05-08 13:20:45.111589 (20747) main____ INFO    ----------------------------------------
+2026-05-08 13:20:45.116062 (20747) main____ INFO    JasperGold version info
+2026-05-08 13:20:45.116081 (20747) main____ INFO      tool      : JasperGold 2019.09
+2026-05-08 13:20:45.116094 (20747) main____ INFO      version   : 2019.09p002 64 bits
+2026-05-08 13:20:45.116104 (20747) main____ INFO      build date: 2019.11.26 18:17:27 PST
+2026-05-08 13:20:45.116111 (20747) main____ INFO    ----------------------------------------
+2026-05-08 13:20:45.116117 (20747) main____ INFO    Runtime info:
+2026-05-08 13:20:45.116126 (20747) main____ INFO      platform  : Linux 3.10.0-1160.el7.x86_64 x86_64
+2026-05-08 13:20:45.116137 (20747) main____ INFO      hostname  : mctsvlsi15.drmcet.ac.in
+2026-05-08 13:20:45.116144 (20747) main____ INFO      pid       : 20747
+2026-05-08 13:20:45.116151 (20747) main____ INFO      arguments : '-style' 'windows'
+2026-05-08 13:20:45.116157 (20747) main____ INFO    ----------------------------------------
+2026-05-08 13:20:45.116163 (20747) main____ INFO    System resource limits info:
+2026-05-08 13:20:45.116171 (20747) main____ INFO      virtual memory: unlimited
+2026-05-08 13:20:45.116178 (20747) main____ INFO      cpu time      : unlimited
+2026-05-08 13:20:45.116199 (20747) main____ INFO      stack size    : 8388608 B
+2026-05-08 13:20:45.116209 (20747) main____ INFO      core file size: 0 B
+2026-05-08 13:20:45.116223 (20747) main____ INFO      open files    : 1024
+2026-05-08 13:20:45.116230 (20747) main____ INFO      file size     : unlimited
+2026-05-08 13:20:45.116236 (20747) main____ INFO    ----------------------------------------
+2026-05-08 13:20:45.116242 (20747) main____ INFO    Memory statistics:
+2026-05-08 13:20:45.116249 (20747) main____ INFO      total physical memory  : 15947936 kB
+2026-05-08 13:20:45.116255 (20747) main____ INFO      free physical memory   : 11646944 kB
+2026-05-08 13:20:45.116261 (20747) main____ INFO      committed address space: 5361932 kB
+2026-05-08 13:20:45.116267 (20747) main____ INFO    ----------------------------------------
+2026-05-08 13:20:45.116315 (20747) main____ INFO    Important environment variables:
+2026-05-08 13:20:45.116332 (20747) main____ INFO      CDS_LIC_FILE   : '5280@14.139.1.126'
+2026-05-08 13:20:45.116341 (20747) main____ INFO      DISPLAY        : ':0'
+2026-05-08 13:20:45.116350 (20747) main____ INFO      EDITOR         : 'gedit'
+2026-05-08 13:20:45.116359 (20747) main____ INFO      LM_LICENSE_FILE: '1717@14.139.1.126'
+2026-05-08 13:20:45.116365 (20747) main____ INFO    ----------------------------------------
+2026-05-08 13:20:45.134284 (20747) lic_core INFO    Initializing license system ...
+2026-05-08 13:20:45.214194 (20747) lic_core INFO    ... license system initialized.
+2026-05-08 13:20:45.279169 (20747) lic__man INFO    Claim 'main' for <ui>.
+2026-05-08 13:20:45.279265 (20747) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2026-05-08 13:20:46.223601 (20747) lic_core INFO    ... (1) checkout succeeded
+2026-05-08 13:20:46.223740 (20747) lic__man INFO    Claim 'fpv' for <ui>.
+2026-05-08 13:20:46.223781 (20747) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2026-05-08 13:20:47.008099 (20747) lic_core INFO    ... (2) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
+2026-05-08 13:20:47.008188 (20747) lic_core INFO    (3) checking out 'jasper_fao' ...
+2026-05-08 13:20:47.744391 (20747) lic_core INFO    ... (3) checkout succeeded
+2026-05-08 13:20:49.682161 (20747) lic__man INFO    Claim 'fpv' for <ui>.
+2026-05-08 13:20:49.962845 (20747) lic__man INFO    Unclaim 'fpv' for <ui>.
+2026-05-08 13:20:49.962871 (20747) lic__man INFO    Claim 'fpv' for <ui>.
+2026-05-08 13:20:49.971647 (20747) session_ INFO    Starting analysis session with session id 'session_0' (launcher: <local>) ...
+2026-05-08 13:20:49.972331 (20747) session_ INFO    Analysis session with session id 'session_0' started (pid: 20772)
+2026-05-08 13:21:04.572892 (20747) session_ INFO    Analysis session 'session_0' connected to the console (host: 127.0.0.1:39964)
+2026-05-08 13:26:09.945116 (20747) main____ INFO    About to exit: requested from GUI
+2026-05-08 13:26:10.196520 (20747) session_ INFO    Analysis session 'session_0' disconnected.
+2026-05-08 13:26:10.208738 (20747) main____ INFO    Exiting with status 0.

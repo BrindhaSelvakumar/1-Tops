@@ -1,0 +1,15 @@
+21:44:55:0519 [com.cadence.mdv.imc.Main] [main] INFO  - Binding debug tools http on port: 45364
+21:44:55:0562 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Valid model file not found for run directory ./cov_work/scope. Specify a valid run directory with correct ucm, ucd files and rerun the command.
+21:45:30:0880 [com.cadence.mdv.imc.Main] [main] INFO  - Binding debug tools http on port: 37988
+21:45:30:0913 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Valid model file not found for run directory ./cov_work/scope. Specify a valid run directory with correct ucm, ucd files and rerun the command.
+21:47:48:0115 [com.cadence.mdv.imc.Main] [main] INFO  - Binding debug tools http on port: 41753
+21:47:48:0150 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Error loading database file ./cov_work/scope/icc_2d53bd15_419f2eaa.ucm:
+serialization exception.
+21:47:48:0150 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Valid data file not found for run directory ./cov_work/scope/test. Specify a valid run directory with correct ucm, ucd files and rerun the command.	   
+21:48:26:0671 [com.cadence.mdv.imc.Main] [main] INFO  - Binding debug tools http on port: 46004
+21:48:26:0702 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Error loading database file ./cov_work/scope/icc_2d53bd15_419f2eaa.ucm:
+serialization exception.
+21:48:26:0702 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Valid data file not found for run directory ./cov_work/scope/test. Specify a valid run directory with correct ucm, ucd files and rerun the command.	   
+21:50:13:0669 [com.cadence.mdv.imc.Main] [main] INFO  - Binding debug tools http on port: 41917
+21:50:13:0696 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Cannot read directory ./cov_work/scope/test/icc_2d53bd15_419f2eaa.ucd. Check if the directory has read permission, and rerun the command	   
+21:50:13:0696 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Valid model file not found for run directory ./cov_work/scope/test/icc_2d53bd15_419f2eaa.ucd. Specify a valid run directory with correct ucm, ucd files and rerun the command.
