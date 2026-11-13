@@ -1,3 +1,8 @@
+// ==============================================================
+// LEGACY AHB DECODER (SUPERSEDED)
+// Note: Active design uses ahb_ibus_decoder.v and ahb_dbus_decoder.v
+// This file is retained for legacy reference only.
+// ==============================================================
 `timescale 1ns/1ps
 module ahb_decoder (
     input  wire [31:0] HADDR,

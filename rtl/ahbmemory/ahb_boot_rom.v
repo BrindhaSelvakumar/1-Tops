@@ -12,16 +12,15 @@ module ahb_boot_rom #(
     input  wire        HREADYin,
     output wire [31:0] HRDATA,
     output wire        HREADYout,
-    output wire        HRESP
+    output wire [1:0]  HRESP
 );
 
     assign HREADYout = 1'b1;
-    assign HRESP     = 1'b0;
+    assign HRESP     = 2'b00;
 
     localparam integer ROM_DEPTH = (1 << ROM_ADDR_WIDTH);
 
     reg [31:0] rom_data [0:ROM_DEPTH-1];
-    reg [31:0] data_out_reg;
 
     // 🔥 ADD THESE (IMPORTANT)
     reg [ROM_ADDR_WIDTH-1:0] addr_latched;
@@ -59,14 +58,8 @@ module ahb_boot_rom #(
     end
 
     // ---------------------------
-    // DATA PHASE (correct timing)
+    // DATA PHASE (Combinational in Data Phase)
     // ---------------------------
-    always @(posedge HCLK) begin
-        if (valid_latched) begin
-            data_out_reg <= rom_data[addr_latched];
-        end
-    end
-
-    assign HRDATA = data_out_reg;
+    assign HRDATA = rom_data[addr_latched];
 
 endmodule

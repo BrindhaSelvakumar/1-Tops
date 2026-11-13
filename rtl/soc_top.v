@@ -52,8 +52,8 @@ module soc_top #(
     wire [31:0] dhrdata_dsram, dhrdata_apb;
 
     wire        dhsel_dsram, dhsel_apb, dhsel_nomap;
-    wire [1:0]  dhresp_bus;
-    wire [1:0]  dhresp_apb;
+    wire [1:0]  dhresp_bus;   // lint: intentionally read only for debug
+    wire [1:0]  dhresp_apb;   // lint: intentionally read only for debug
 
     // ================= APB =================
     wire [31:0] paddr, pwdata;
@@ -74,14 +74,13 @@ module soc_top #(
     wire       clic_irq;
     wire [2:0] clic_irq_id;
     wire       plic_irq;
-    wire [1:0] plic_irq_id;
+    wire [1:0] plic_irq_id;    // driven by PLIC; available for future use
     wire [5:0] clic_irq_src;
     wire [1:0] plic_ext_irq_i;
     assign plic_ext_irq_i = ext_irq_pad_i;
-    wire       cpu_irq_ack;
-    // optional keep for debug/lint
+    wire       cpu_irq_ack;    // driven by CORE; available for future use
+    // Intentionally unused outputs kept for debug/lint visibility
     wire [31:0] unused_isram_rdata, unused_dsram_rdata;
-    wire [31:0] gpio_in_sync2, gpio_in_sync1;
 
     // ================= CPU =================
     risc_core_top CORE (
@@ -129,7 +128,7 @@ module soc_top #(
     .HSEL_ISRAM(ihsel_isram),
     .HSEL_DSRAM(1'b0),
     .HSEL_APB(1'b0),
-    .HSEL_NOMAP(ihsel_nomap),
+    .HSEL_NOMAP(ihsel_nomap & ihtrans[1]),
 
     .HRDATA_ROM(ihrdata_rom),
     .HRDATA_ISRAM(ihrdata_isram),
@@ -199,7 +198,7 @@ module soc_top #(
     .HSEL_ISRAM(1'b0),
     .HSEL_DSRAM(dhsel_dsram),
     .HSEL_APB(dhsel_apb),
-    .HSEL_NOMAP(dhsel_nomap),
+    .HSEL_NOMAP(dhsel_nomap & dhtrans[1]),
 
     .HRDATA_ROM(32'h0),
     .HRDATA_ISRAM(32'h0),
@@ -217,7 +216,7 @@ module soc_top #(
 );
 
     // ================= DSRAM =================
-    ahb_isram_slave #(
+    ahb_dsram_slave #(
         .ADDR_WIDTH(14),
         .MEM_INIT_FILE("")
     ) DSRAM (
@@ -314,15 +313,13 @@ module soc_top #(
             gpio_sync2 <= gpio_sync1;
         end
     end
-    assign gpio_in_sync1 = gpio_sync1;
-    assign gpio_in_sync2 = gpio_sync2;
 
     apb_gpio GPIO (
         .PCLK(clk), .PRESETn(rst_n),
         .PSEL(psel[3]), .PENABLE(penable), .PWRITE(pwrite),
         .PADDR(paddr[11:0]), .PWDATA(pwdata),
         .PRDATA(prdata3), .PREADY(pready3), .PSLVERR(pslverr3),
-        .gpio_in(gpio_in_sync2),
+        .gpio_in(gpio_sync2),
         .gpio_out(gpio_out_pad),
         .gpio_dir(gpio_dir_pad)
     );

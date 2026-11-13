@@ -14,7 +14,7 @@ module ahb_isram_slave #(
     input  wire [31:0] HWDATA,
     input  wire        HREADYin,
 
-    output reg  [31:0] HRDATA,
+    output wire [31:0] HRDATA,
     output wire        HREADYout,
     output wire [1:0]  HRESP,
     output wire [31:0] sram_rdata_out
@@ -94,14 +94,9 @@ module ahb_isram_slave #(
     end
 
     // ============================
-    // READ (FIXED - CRITICAL)
+    // READ (Combinational in Data Phase)
     // ============================
-    always @(posedge HCLK or negedge HRESETn) begin
-        if (!HRESETn)
-            HRDATA <= 32'h00000000;
-        else if (valid_latched && !write_latched && HREADYin)
-            HRDATA <= ram[addr_latched];
-    end
+    assign HRDATA         = ram[addr_latched];
 
     assign sram_rdata_out = HRDATA;
     assign HREADYout      = 1'b1;   // zero wait-state

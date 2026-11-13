@@ -3,6 +3,7 @@ INCA_libs/
 xcelium.d/
 waves.shm/
 cov_work/
+**/jgproject/
 jgproject/work/
 jgproject/work.bak/
 jgproject/sessionLogs/

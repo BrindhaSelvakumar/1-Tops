@@ -44,10 +44,10 @@ genvar k;
     generate
 for(k = 0; k < TIMER_CNT; k = k + 1) begin : TIMER_GEN
 timer_core #(.APB_ADDR_WIDTH(APB_ADDR_WIDTH)) timer_inst (
-.HCLK(PCLK), .HRESETn(PRESETn), .PADDR(PADDR), .PWDATA(PWDATA),
+.PCLK(PCLK), .PRESETn(PRESETn), .PADDR(PADDR), .PWDATA(PWDATA),
 .PWRITE(PWRITE), .PSEL(psel_int[k]), .PENABLE(PENABLE),
 .PRDATA(prdata_flat[k*32 +: 32]), .PREADY(pready_bus[k]),
-.PSLVERR(pslverr_bus[k]), .irq_o(irq_o[2*k+1 : 2*k])
+.PSLVERR(pslverr_bus[k]), .irq_o(irq_o[2*k +: 2])
             );
         end
 endgenerate

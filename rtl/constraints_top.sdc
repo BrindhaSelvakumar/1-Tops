@@ -10,13 +10,13 @@ set_propagated_clock [get_clocks clk]
 # ============================================================
 # Reset Constraint
 # ============================================================
-set_false_path -from [get_ports HRESETn] -to [all_registers]
+set_false_path -from [get_ports rst_n] -to [all_registers]
 
 # ============================================================
 # Input Delay
 # ============================================================
 set_input_delay 2 -clock clk \
-[remove_from_collection [all_inputs] [get_ports {clk HRESETn}]]
+[remove_from_collection [all_inputs] [get_ports {clk rst_n}]]
 
 # ============================================================
 # Output Delay
@@ -26,7 +26,7 @@ set_output_delay 2 -clock clk [all_outputs]
 # ============================================================
 # Load and Drive
 # ============================================================
-set_drive 1 [remove_from_collection [all_inputs] [get_ports clk]]
+set_drive 1 [remove_from_collection [all_inputs] [get_ports {clk rst_n}]]
 set_load 0.1 [all_outputs]
 
 # ============================================================

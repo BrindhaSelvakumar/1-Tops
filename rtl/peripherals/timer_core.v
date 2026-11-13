@@ -2,8 +2,8 @@
 module timer_core#(
     parameter APB_ADDR_WIDTH = 12
 ) (
-input  wire HCLK,      // System Clock
-input  wire HRESETn,   // Active Low Reset
+input  wire PCLK,      // System Clock
+input  wire PRESETn,   // Active Low Reset
 
     // APB Interface
 input  wire [APB_ADDR_WIDTH-1:0] PADDR,
@@ -34,8 +34,8 @@ input  wire        PENABLE,
     wire [2:0] prescale_val = reg_ctrl[5:3];
     wire tick = (prescale_cnt >= ((1 << prescale_val) - 1));
 
-    always @(posedge HCLK or negedge HRESETn) begin
-        if (!HRESETn) begin
+    always @(posedge PCLK or negedge PRESETn) begin
+        if (!PRESETn) begin
 reg_timer    <= 64'b0;
 prescale_cnt <= 32'b0;
         end else begin
@@ -53,8 +53,8 @@ prescale_cnt <= prescale_cnt + 1;
     end
 
     // --- 4. Interrupt Logic (Main Clock for Stability) ---
-    always @(posedge HCLK or negedge HRESETn) begin
-        if (!HRESETn) begin
+    always @(posedge PCLK or negedge PRESETn) begin
+        if (!PRESETn) begin
 irq_o <= 2'b0;
 reg_irq_stat <= 32'b0;
 timer_match_prev <= 1'b0;
@@ -87,8 +87,8 @@ irq_o <= reg_irq_stat[1:0];
     assign PSLVERR = 1'b0;
 
     // Register Write Logic
-    always @(posedge HCLK or negedge HRESETn) begin
-        if (!HRESETn) begin
+    always @(posedge PCLK or negedge PRESETn) begin
+        if (!PRESETn) begin
 reg_cmp  <= 64'h0000_0000_0000_0000;
 reg_ctrl <= 32'b0;
         end else if (PSEL && PWRITE && PENABLE) begin

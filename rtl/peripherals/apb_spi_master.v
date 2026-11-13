@@ -44,7 +44,6 @@ module apb_spi_master (
             tx_data_reg <= 32'h0;
             clk_div_reg <= 8'd4;
             ctrl_reg    <= 8'h0;
-            PRDATA      <= 32'h0;
         end else begin
             // WRITE
             if (PSEL && PENABLE && PWRITE) begin
@@ -56,21 +55,23 @@ module apb_spi_master (
                 endcase
             end
 
-            // READ
-            if (PSEL && PENABLE && !PWRITE) begin
-                case (PADDR[5:0])
-                    6'h00: PRDATA <= tx_data_reg;
-                    6'h04: PRDATA <= rx_data_reg;
-                    6'h08: PRDATA <= {31'b0, busy};
-                    6'h0C: PRDATA <= {24'b0, clk_div_reg};
-                    default: PRDATA <= 32'h0;
-                endcase
-            end
-
             // AUTO CLEAR START BIT
             if (busy)
                 ctrl_reg[0] <= 1'b0;
         end
+    end
+
+    // -------------------------------
+    // APB READ (combinational — correct APB timing)
+    // -------------------------------
+    always @(*) begin
+        case (PADDR[5:0])
+            6'h00:   PRDATA = tx_data_reg;
+            6'h04:   PRDATA = rx_data_reg;
+            6'h08:   PRDATA = {31'b0, busy};
+            6'h0C:   PRDATA = {24'b0, clk_div_reg};
+            default: PRDATA = 32'h0;
+        endcase
     end
 
     // -------------------------------

@@ -43,13 +43,24 @@ module decode_stage (
     assign funct3   = instr[14:12];
     assign funct7   = instr[31:25];
 
+    wire [6:0] opcode = instr[6:0];
+    wire use_rs1 = (opcode != 7'b0110111) && // LUI
+                   (opcode != 7'b0010111) && // AUIPC
+                   (opcode != 7'b1101111);   // JAL
+
+    wire use_rs2 = (opcode == 7'b0110011) || // R-type & M-ext
+                   (opcode == 7'b0100011) || // Store
+                   (opcode == 7'b1100011);   // Branch
+
+    wire [4:0] haz_rs1 = use_rs1 ? rs1_addr : 5'd0;
+    wire [4:0] haz_rs2 = use_rs2 ? rs2_addr : 5'd0;
+
     wire c_mem_read, c_mem_write, c_reg_write, c_alu_src;
     wire c_branch, c_jump, c_m_ext;
     wire [1:0] c_mem_to_reg, c_alu_op, c_op1_src;
-    wire [1:0] pc_src_wire;
     wire [4:0] c_alu_ctrl;
 
-    sign_gen ig (.instr(instr), .imm(imm));
+    imm_gen imm_gen_inst (.instr(instr), .imm(imm));
 
     register_f rf (
         .clk(clk),
@@ -57,8 +68,8 @@ module decode_stage (
         .write_en(wb_reg_write_en),
         .rd_addr(wb_rd_addr),
         .write_data(wb_data),
-        .rs1_addr1(rs1_addr),
-        .rs2_addr2(rs2_addr),
+        .rs1_addr(rs1_addr),
+        .rs2_addr(rs2_addr),
         .rs1_data(rdata1),
         .rs2_data(rdata2)
     );
@@ -76,7 +87,7 @@ module decode_stage (
         .m_ext(c_m_ext),
         .alu_op(c_alu_op),
         .op1_src(c_op1_src),
-        .pc_src(pc_src_wire)
+        .pc_src()
     );
 
     alu_ctrl_32 acu (
@@ -90,8 +101,8 @@ module decode_stage (
     hazard_unit hazard_detect (
         .id_ex_mem_read(ex_mem_read),
         .id_ex_rd(ex_rd_addr),
-        .rs1_addr(rs1_addr),
-        .rs2_addr(rs2_addr),
+        .rs1_addr(haz_rs1),
+        .rs2_addr(haz_rs2),
         .m_unit_busy(m_unit_busy),
         .pc_write(pc_write),
         .if_id_write(if_id_write),

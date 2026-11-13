@@ -40,17 +40,9 @@ module ex_mem_reg (
             pc_plus4_out       <= 32'b0;
         end
 
-        // ✅ STALL = INSERT BUBBLE (not hold stale control)
+        // STALL = HOLD STATE (keep presenting the same request to memory)
         else if (stall) begin
-            reg_write_out      <= 1'b0;
-            mem_to_reg_out     <= 2'b00;
-            mem_read_out       <= 1'b0;
-            mem_write_out      <= 1'b0;
-            alu_result_out     <= 32'b0;
-            mem_write_data_out <= 32'b0;
-            rd_addr_out        <= 5'b0;
-            funct3_out         <= 3'b000;
-            pc_plus4_out       <= 32'b0;
+            // hold all outputs — do nothing
         end
 
         // normal pipeline flow

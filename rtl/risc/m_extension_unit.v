@@ -34,8 +34,9 @@ module m_extension_unit (
     // -----------------------------
     // Unsigned division core
     // -----------------------------
-    wire [31:0] udiv = (b_abs == 0) ? 32'hFFFFFFFF : (a_abs / b_abs);
-    wire [31:0] urem = (b_abs == 0) ? a_abs        : (a_abs % b_abs);
+    wire [31:0] safe_b_abs = (b_abs == 0) ? 32'd1 : b_abs;
+    wire [31:0] udiv = (b_abs == 0) ? 32'hFFFFFFFF : (a_abs / safe_b_abs);
+    wire [31:0] urem = (b_abs == 0) ? a_abs        : (a_abs % safe_b_abs);
 
     // -----------------------------
     // Signed division
@@ -57,8 +58,9 @@ module m_extension_unit (
     // -----------------------------
     // Unsigned division
     // -----------------------------
-    wire [31:0] div_unsigned = (b == 0) ? 32'hFFFFFFFF : (a / b);
-    wire [31:0] rem_unsigned = (b == 0) ? a            : (a % b);
+    wire [31:0] safe_b = (b == 0) ? 32'd1 : b;
+    wire [31:0] div_unsigned = (b == 0) ? 32'hFFFFFFFF : (a / safe_b);
+    wire [31:0] rem_unsigned = (b == 0) ? a            : (a % safe_b);
 
     // -----------------------------
     // Output logic

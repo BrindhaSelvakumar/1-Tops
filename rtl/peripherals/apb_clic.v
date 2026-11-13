@@ -60,8 +60,8 @@ module apb_clic #(
     // ---------------- Registers ----------------
     always @(posedge PCLK or negedge PRESETn) begin
         if (!PRESETn) begin
-            ie_reg <= '0;
-            ip_reg <= '0;
+            ie_reg <= {NIRQ{1'b0}};
+            ip_reg <= {NIRQ{1'b0}};
         end else begin
             ie_reg <= ie_n;
             ip_reg <= ip_n;

@@ -80,6 +80,8 @@ always @(*) begin
                 3'b100: alu_ctrl = 5'b00100; // XORI
                 3'b110: alu_ctrl = 5'b00011; // ORI
                 3'b111: alu_ctrl = 5'b00010; // ANDI
+                3'b001: alu_ctrl = 5'b01101; // SLLI
+                3'b101: alu_ctrl = (funct7[5]) ? 5'b01111 : 5'b01110; // SRAI / SRLI
                 default: alu_ctrl = 5'b00000;
             endcase
         end

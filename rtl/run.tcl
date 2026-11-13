@@ -18,19 +18,21 @@ read_hdl {
     id_ex_reg.v
     ex_mem_reg.v
     mem_wb_reg.v
-    sign_gen.v
+    imm_gen.v
     register_f.v
     hazard_unit.v
     add_32.v
     prefix_adder_32.v
-    ahb_decoder.v
-    ahb_sram_slave.v
     ahb_boot_rom.v
     ahb_dbus_decoder.v
     ahb_ibus_decoder.v
-    ahb_slave_mux.v
+    ahb_isram_slave.v
+    ahb_dsram_slave.v
+    ahb_slave_imux.v
+    ahb_slave_dmux.v
     ahb_apb_bridge.v
     apb_decoder.v
+    sync_fifo.v
     uart_tx.v
     uart_rx.v
     timer_core.v
@@ -41,7 +43,6 @@ read_hdl {
     apb_plic.v
     apb_gpio.v
     apb_clic.v
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 }
 
 elaborate soc_top

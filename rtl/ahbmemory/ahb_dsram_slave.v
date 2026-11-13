@@ -24,8 +24,12 @@ module ahb_dsram_slave #(
     reg [31:0] ram [0:DEPTH-1];
     integer k;
 
-    wire trans_valid = HSEL & HTRANS[1] & HREADYin;
-    wire [ADDR_WIDTH-1:0] word_addr = HADDR[ADDR_WIDTH+1:2];
+    // Address-phase latching (matches ahb_isram_slave pattern)
+    reg [ADDR_WIDTH-1:0] addr_latched;
+    reg                  valid_latched;
+    reg                  write_latched;
+    reg [2:0]            size_latched;
+    reg [1:0]            byte_off_latched;
 
 `ifndef SYNTHESIS
     initial begin
@@ -36,31 +40,66 @@ module ahb_dsram_slave #(
     end
 `endif
 
-    assign HRDATA         = ram[word_addr];
-    assign sram_rdata_out = HRDATA;
-    assign HREADYout      = 1'b1;
-    assign HRESP          = 2'b00;
+    // ============================
+    // ADDRESS PHASE LATCH
+    // ============================
+    always @(posedge HCLK or negedge HRESETn) begin
+        if (!HRESETn) begin
+            addr_latched     <= 0;
+            valid_latched    <= 0;
+            write_latched    <= 0;
+            size_latched     <= 0;
+            byte_off_latched <= 0;
+        end
+        else if (HREADYin) begin
+            valid_latched <= HSEL && HTRANS[1];
 
+            if (HSEL && HTRANS[1]) begin
+                addr_latched     <= HADDR[ADDR_WIDTH+1:2];
+                write_latched    <= HWRITE;
+                size_latched     <= HSIZE;
+                byte_off_latched <= HADDR[1:0];
+            end
+        end
+    end
+
+    // ============================
+    // WRITE (DATA PHASE)
+    // ============================
     always @(posedge HCLK) begin
-        if (trans_valid && HWRITE) begin
-            case (HSIZE)
-                3'b010: ram[word_addr] <= HWDATA;
+        if (valid_latched && write_latched && HREADYin) begin
+            case (size_latched)
+                3'b010: ram[addr_latched] <= HWDATA;
+
                 3'b001: begin
-                    if (HADDR[1]) ram[word_addr][31:16] <= HWDATA[15:0];
-                    else          ram[word_addr][15:0]  <= HWDATA[15:0];
+                    if (byte_off_latched[1])
+                        ram[addr_latched][31:16] <= HWDATA[15:0];
+                    else
+                        ram[addr_latched][15:0]  <= HWDATA[15:0];
                 end
+
                 3'b000: begin
-                    case (HADDR[1:0])
-                        2'b00: ram[word_addr][7:0]   <= HWDATA[7:0];
-                        2'b01: ram[word_addr][15:8]  <= HWDATA[7:0];
-                        2'b10: ram[word_addr][23:16] <= HWDATA[7:0];
-                        2'b11: ram[word_addr][31:24] <= HWDATA[7:0];
+                    case (byte_off_latched)
+                        2'b00: ram[addr_latched][7:0]   <= HWDATA[7:0];
+                        2'b01: ram[addr_latched][15:8]  <= HWDATA[7:0];
+                        2'b10: ram[addr_latched][23:16] <= HWDATA[7:0];
+                        2'b11: ram[addr_latched][31:24] <= HWDATA[7:0];
                         default: ;
                     endcase
                 end
-                default: ram[word_addr] <= HWDATA;
+
+                default: ram[addr_latched] <= HWDATA;
             endcase
         end
     end
+
+    // ============================
+    // READ (Combinational in Data Phase)
+    // ============================
+    assign HRDATA         = ram[addr_latched];
+
+    assign sram_rdata_out = HRDATA;
+    assign HREADYout      = 1'b1;
+    assign HRESP          = 2'b00;
 
 endmodule

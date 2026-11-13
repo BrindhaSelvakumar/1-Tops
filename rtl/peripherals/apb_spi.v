@@ -46,31 +46,37 @@ module apb_spi (
     reg [31:0] tx_data_reg;   // next transmit word
     reg [5:0]  bit_count;
 
-    // APB: write tx_data, read stored_data
+    // APB clear flag — set by APB write, consumed by SPI block
+    reg apb_clear_stored;
+
+    // APB: write tx_data, set clear flag
     always @(posedge PCLK or negedge PRESETn) begin
         if (!PRESETn) begin
-            tx_data_reg <= 32'h0;
-            PRDATA      <= 32'h0;
+            tx_data_reg      <= 32'h0;
+            apb_clear_stored <= 1'b0;
         end else begin
+            apb_clear_stored <= 1'b0; // default: de-assert
+
             if (PSEL && PENABLE && PWRITE) begin
                 case (PADDR[5:0])
-                    6'h00: tx_data_reg <= PWDATA;     // preload MISO data
-                    6'h04: stored_data <= 32'h0;      // optional clear
+                    6'h00: tx_data_reg      <= PWDATA;     // preload MISO data
+                    6'h04: apb_clear_stored <= 1'b1;       // request clear
                     default: ;
-                endcase
-            end
-
-            if (PSEL && !PWRITE) begin
-                case (PADDR[5:0])
-                    6'h00: PRDATA <= stored_data;
-                    6'h04: PRDATA <= tx_data_reg;
-                    default: PRDATA <= 32'h0;
                 endcase
             end
         end
     end
 
-    // SPI slave transfer (32-bit)
+    // APB: combinational read (matches other peripherals)
+    always @(*) begin
+        case (PADDR[5:0])
+            6'h00:   PRDATA = stored_data;
+            6'h04:   PRDATA = tx_data_reg;
+            default: PRDATA = 32'h0;
+        endcase
+    end
+
+    // SPI slave transfer (32-bit) — single driver for stored_data
     always @(posedge PCLK or negedge PRESETn) begin
         if (!PRESETn) begin
             bit_count    <= 6'd0;
@@ -79,6 +85,10 @@ module apb_spi (
             stored_data  <= 32'h0;
             spi_miso     <= 1'b0;
         end else begin
+            // APB clear takes priority when SPI is idle
+            if (apb_clear_stored)
+                stored_data <= 32'h0;
+
             if (!cs_active) begin
                 bit_count    <= 6'd0;
                 tx_shift_reg <= tx_data_reg;
@@ -103,4 +113,3 @@ module apb_spi (
     end
 
 endmodule
-

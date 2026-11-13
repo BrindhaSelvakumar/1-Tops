@@ -64,10 +64,10 @@ module ahb_slave_dmux (
             HRDATA = HRDATA_APB;
             HREADY = HREADY_APB;
         end
-        else begin
+        else if (sel_dphase[0]) begin
             HRDATA = 32'hDEAD_BEEF;
             HREADY = 1'b1;
-            HRESP  = 2'b01; // ERROR
+            HRESP  = 2'b01; // ERROR only for NOMAP
         end
     end
 

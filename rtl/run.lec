@@ -5,49 +5,51 @@ set system mode setup
 
 
 read design -golden -verilog \
-/home/student/Desktop/1tops/soc_top.v \
-/home/student/Desktop/1tops/risc_core_top.v \
-/home/student/Desktop/1tops/fetch_stage.v \
-/home/student/Desktop/1tops/decode_stage.v \
-/home/student/Desktop/1tops/execute_stage.v \
-/home/student/Desktop/1tops/memory_stage.v \
-/home/student/Desktop/1tops/writeback_stage.v \
-/home/student/Desktop/1tops/if_id_reg.v \
-/home/student/Desktop/1tops/forwarding_unit.v \
-/home/student/Desktop/1tops/alu_ctrl_32.v \
-/home/student/Desktop/1tops/alu_32.v \
-/home/student/Desktop/1tops/main_ctrl.v \
-/home/student/Desktop/1tops/m_extension_unit.v \
-/home/student/Desktop/1tops/id_ex_reg.v \
-/home/student/Desktop/1tops/ex_mem_reg.v \
-/home/student/Desktop/1tops/mem_wb_reg.v \
-/home/student/Desktop/1tops/sign_gen.v \
-/home/student/Desktop/1tops/register_f.v \
-/home/student/Desktop/1tops/hazard_unit.v \
-/home/student/Desktop/1tops/add_32.v \
-/home/student/Desktop/1tops/prefix_adder_32.v \
-/home/student/Desktop/1tops/ahb_decoder.v \
-/home/student/Desktop/1tops/ahb_sram_slave.v \
-/home/student/Desktop/1tops/ahb_boot_rom.v \
-/home/student/Desktop/1tops/ahb_dbus_decoder.v \
-/home/student/Desktop/1tops/ahb_ibus_decoder.v \
-/home/student/Desktop/1tops/ahb_slave_mux.v \
-/home/student/Desktop/1tops/ahb_apb_bridge.v \
-/home/student/Desktop/1tops/apb_decoder.v \
-/home/student/Desktop/1tops/uart_tx.v \
-/home/student/Desktop/1tops/uart_rx.v \
-/home/student/Desktop/1tops/timer_core.v \
-/home/student/Desktop/1tops/apb_uart.v \
-/home/student/Desktop/1tops/apb_timer.v \
-/home/student/Desktop/1tops/apb_spi_master.v \
-/home/student/Desktop/1tops/apb_spi.v \
-/home/student/Desktop/1tops/apb_plic.v \
-/home/student/Desktop/1tops/apb_gpio.v \
-/home/student/Desktop/1tops/apb_clic.v
+soc_top.v \
+risc_core_top.v \
+fetch_stage.v \
+decode_stage.v \
+execute_stage.v \
+memory_stage.v \
+writeback_stage.v \
+if_id_reg.v \
+forwarding_unit.v \
+alu_ctrl_32.v \
+alu_32.v \
+main_ctrl.v \
+m_extension_unit.v \
+id_ex_reg.v \
+ex_mem_reg.v \
+mem_wb_reg.v \
+imm_gen.v \
+register_f.v \
+hazard_unit.v \
+add_32.v \
+prefix_adder_32.v \
+ahb_boot_rom.v \
+ahb_dbus_decoder.v \
+ahb_ibus_decoder.v \
+ahb_isram_slave.v \
+ahb_dsram_slave.v \
+ahb_slave_imux.v \
+ahb_slave_dmux.v \
+ahb_apb_bridge.v \
+apb_decoder.v \
+sync_fifo.v \
+uart_tx.v \
+uart_rx.v \
+timer_core.v \
+apb_uart.v \
+apb_timer.v \
+apb_spi_master.v \
+apb_spi.v \
+apb_plic.v \
+apb_gpio.v \
+apb_clic.v
 
 
 read design -revised -verilog \
-/home/student/Desktop/1tops/soc_top_netlist.v
+soc_top_netlist.v
 
 
 set root module soc_top

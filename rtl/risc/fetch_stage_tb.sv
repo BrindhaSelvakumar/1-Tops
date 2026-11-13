@@ -6,9 +6,7 @@ module fetch_stage_tb;
   reg rst_n;
 
   reg branch_taken;
-  reg jump;
   reg [31:0] branch_target;
-  reg [31:0] jump_target;
   reg stall_all;
 
   wire [31:0] IHADDR;
@@ -29,9 +27,7 @@ module fetch_stage_tb;
     .rst_n(rst_n),
 
     .branch_taken(branch_taken),
-    .jump(jump),
     .branch_target(branch_target),
-    .jump_target(jump_target),
 
     .stall_all(stall_all),
 
@@ -75,37 +71,27 @@ module fetch_stage_tb;
   property pc_internal_inc;
     @(posedge clk)
     disable iff (!rst_n || !past_valid)
-    $past(IHREADY && !stall_all && !branch_taken && !jump)
+    $past(IHREADY && !stall_all && !branch_taken)
     |-> (dut.pc == $past(dut.pc) + 32'd4);
   endproperty
 
   assert property (pc_internal_inc)
     else $error("ASSERT_FAIL: PC did not increment by 4");
 
-  property branch_check;
+  property redirect_check;
     @(posedge clk)
     disable iff (!rst_n || !past_valid)
     $past(IHREADY && !stall_all && branch_taken)
     |-> (dut.pc == $past(branch_target));
   endproperty
 
-  assert property (branch_check)
-    else $error("ASSERT_FAIL: Branch target not loaded into PC");
-
-  property jump_check;
-    @(posedge clk)
-    disable iff (!rst_n || !past_valid)
-    $past(IHREADY && !stall_all && !branch_taken && jump)
-    |-> (dut.pc == $past(jump_target));
-  endproperty
-
-  assert property (jump_check)
-    else $error("ASSERT_FAIL: Jump target not loaded into PC");
+  assert property (redirect_check)
+    else $error("ASSERT_FAIL: Redirect target not loaded into PC");
 
   property stall_check;
     @(posedge clk)
     disable iff (!rst_n || !past_valid)
-    $past(stall_all)
+    $past(stall_all && !branch_taken)
     |-> (dut.pc == $past(dut.pc));
   endproperty
 
@@ -163,8 +149,8 @@ module fetch_stage_tb;
   // -------------------------
   always @(posedge clk) begin
     if (rst_n) begin
-      $display("T=%0t | pc=%h | pc_out=%h | IHADDR=%h | IHREADY=%b | stall=%b | branch=%b | jump=%b",
-        $time, dut.pc, pc_out, IHADDR, IHREADY, stall_all, branch_taken, jump);
+      $display("T=%0t | pc=%h | pc_out=%h | IHADDR=%h | IHREADY=%b | stall=%b | redirect=%b",
+        $time, dut.pc, pc_out, IHADDR, IHREADY, stall_all, branch_taken);
     end
   end
 
@@ -175,9 +161,7 @@ module fetch_stage_tb;
   initial begin
     rst_n         = 1'b0;
     branch_taken  = 1'b0;
-    jump          = 1'b0;
     branch_target = 32'h0000_0000;
-    jump_target   = 32'h0000_0000;
     stall_all     = 1'b0;
     IHREADY       = 1'b1;
     IHRDATA       = 32'h0000_0013;
@@ -196,7 +180,7 @@ module fetch_stage_tb;
     // NORMAL ONE CYCLE
     repeat (2) @(negedge clk);
 
-    // BRANCH CASE
+    // BRANCH REDIRECT CASE
     branch_target = 32'h0001_0100;
     branch_taken  = 1'b1;
     @(negedge clk);
@@ -205,11 +189,11 @@ module fetch_stage_tb;
     // NORMAL
     repeat (4) @(negedge clk);
 
-    // JUMP CASE
-    jump_target = 32'h0001_0200;
-    jump        = 1'b1;
+    // JUMP REDIRECT CASE (same interface as branch)
+    branch_target = 32'h0001_0200;
+    branch_taken  = 1'b1;
     @(negedge clk);
-    jump        = 1'b0;
+    branch_taken  = 1'b0;
 
     // NORMAL
     repeat (3) @(negedge clk);

@@ -9,9 +9,9 @@ RTL design project for a RISC-based SoC top-level system.
 - `rtl/ahbmemory/` - AHB memory and decoder modules.
 - `rtl/bridge/` - AHB to APB bridge logic.
 - `rtl/peripherals/` - APB peripherals including UART, SPI, timer, GPIO, PLIC, and CLIC.
-- `constraints_top.sdc` - Top-level timing constraints.
-- `run.tcl` - Tool run script.
-- `run.lec` - LEC run script.
+- `rtl/constraints_top.sdc` - Top-level timing constraints.
+- `rtl/run.tcl` - Tool run script.
+- `rtl/run.lec` - LEC run script.
 
 ## Main RTL Files
 

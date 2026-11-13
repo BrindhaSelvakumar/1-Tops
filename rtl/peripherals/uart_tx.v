@@ -61,7 +61,7 @@ localparam FSM_STOP  = 2'd3;
 // FSM next state selection.
 //
 
-assign uart_tx_busy = (fsm_state != FSM_IDLE);
+assign uart_tx_busy = (fsm_state != FSM_IDLE) || uart_tx_en;
 assign uart_txd     = txd_reg;
 
 wire next_bit         = (cycle_counter == CYCLES_PER_BIT-1);

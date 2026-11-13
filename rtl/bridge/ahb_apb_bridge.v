@@ -56,7 +56,8 @@ module ahb_apb_bridge (
         (psel_latched[4] && PREADY_P4) ||
         (psel_latched[5] && PREADY_P5) ||
         (psel_latched[6] && PREADY_P6) ||
-        (psel_latched[7] && PREADY_P7);
+        (psel_latched[7] && PREADY_P7) ||
+        (psel_latched == 8'h00);
 
     apb_decoder APB_DEC (
         .PADDR(HADDR),
@@ -74,12 +75,16 @@ module ahb_apb_bridge (
         end else begin
             state <= next_state;
 
-            // Capture request in IDLE or immediately after ACCESS completion
+            // Capture address-phase signals (addr, write, psel) when valid
             if ((state == ST_IDLE && ahb_valid) ||
                 (state == ST_ACCESS && transfer_done && ahb_valid)) begin
                 addr_latched  <= HADDR;
                 write_latched <= HWRITE;
                 psel_latched  <= psel_from_decoder;
+            end
+
+            // Capture HWDATA in SETUP state (data phase — one cycle after address phase)
+            if (state == ST_SETUP) begin
                 wdata_latched <= HWDATA;
             end
         end
@@ -100,7 +105,7 @@ module ahb_apb_bridge (
 
             ST_ACCESS: begin
                 if (transfer_done)
-                    next_state = ahb_valid ? ST_SETUP : ST_IDLE;
+                    next_state = ahb_valid ? ((|psel_from_decoder) ? ST_SETUP : ST_ERROR) : ST_IDLE;
             end
 
             ST_ERROR: begin
@@ -183,4 +188,3 @@ module ahb_apb_bridge (
     end
 
 endmodule
-

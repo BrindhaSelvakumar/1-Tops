@@ -25,9 +25,8 @@ module execute_stage (
     input  wire [1:0]  forward_b,
 
     output wire [31:0] final_result,
-    output wire [31:0] branch_target,
-    output wire [31:0] jump_target,
-    output wire        branch_taken,
+    output wire [31:0] branch_target,    // merged: branch / JAL / JALR target
+    output wire        branch_taken,     // merged: branch-taken OR jump
     output wire        m_unit_busy,
     output wire [31:0] fwd_rs2_out
 );
@@ -57,9 +56,9 @@ module execute_stage (
 
     always @(*) begin
         case (op1_src)
-            2'b01: alu_in_a = ex_pc; 
-            2'b10: alu_in_a = 32'h00000000;    // for AUIPC / JAL
-            default: alu_in_a = fwd_rs1;
+            2'b01: alu_in_a = ex_pc;            // JAL / AUIPC
+            2'b10: alu_in_a = 32'h00000000;     // LUI (zero + imm)
+            default: alu_in_a = fwd_rs1;        // register operand
         endcase
     end
 
@@ -67,20 +66,19 @@ module execute_stage (
 
     // ================= ALU =================
     wire [31:0] std_res;
-    wire alu_zero;
 
     alu_32 main_alu (
         .a(alu_in_a),
         .b(alu_in_b),
         .alu_ctrl(alu_ctrl),
         .res(std_res),
-        .zero(alu_zero),
+        .zero(),
         .neg(),
         .overflow(),
         .cout()
     );
 
-    // ================= M EXT =================
+    // ================= M EXTENSION =================
     wire [31:0] m_res;
 
     m_extension_unit m_ext_unit (
@@ -97,7 +95,11 @@ module execute_stage (
     // ================= FINAL RESULT =================
     assign final_result = (m_ext_ctrl) ? m_res : std_res;
 
-    // ================= BRANCH LOGIC =================
+    // ================= BRANCH COMPARISON =================
+    // Direct comparison on forwarded values — supports all 6 B-type branches
+    wire signed [31:0] fwd_rs1_s = $signed(fwd_rs1);
+    wire signed [31:0] fwd_rs2_s = $signed(fwd_rs2);
+
     reg take_br;
 
     always @(*) begin
@@ -105,24 +107,28 @@ module execute_stage (
 
         if (branch_ctrl) begin
             case (funct3)
-                3'b000: take_br = alu_zero;     // BEQ
-                3'b001: take_br = ~alu_zero;    // BNE
+                3'b000: take_br = (fwd_rs1 == fwd_rs2);      // BEQ
+                3'b001: take_br = (fwd_rs1 != fwd_rs2);      // BNE
+                3'b100: take_br = (fwd_rs1_s <  fwd_rs2_s);  // BLT
+                3'b101: take_br = (fwd_rs1_s >= fwd_rs2_s);  // BGE
+                3'b110: take_br = (fwd_rs1   <  fwd_rs2);    // BLTU
+                3'b111: take_br = (fwd_rs1   >= fwd_rs2);    // BGEU
                 default: take_br = 1'b0;
             endcase
         end
     end
 
-    // ================= TARGET COMPUTATION (FIXED) =================
+    // ================= TARGET COMPUTATION =================
+    // JALR is distinguished from JAL by alu_src_ctrl (JALR has alu_src=1)
+    wire is_jalr = jump_ctrl && alu_src_ctrl;
 
-    wire is_jalr = (jump_ctrl && (funct3 == 3'b000));
-
-    wire [31:0] jal_target   = ex_pc + imm;
-    wire [31:0] branch_tgt   = ex_pc + imm;
+    wire [31:0] pc_plus_imm  = ex_pc + imm;
     wire [31:0] jalr_target  = (fwd_rs1 + imm) & 32'hFFFF_FFFE;
 
-    assign branch_target = branch_tgt;
-    assign jump_target   = is_jalr ? jalr_target : jal_target;
+    // Unified redirect target: JALR uses rs1+imm, everything else uses pc+imm
+    assign branch_target = is_jalr ? jalr_target : pc_plus_imm;
 
-    assign branch_taken = (branch_ctrl && take_br);
+    // Unified redirect signal: fires on branch-taken OR any jump
+    assign branch_taken = (branch_ctrl && take_br) || jump_ctrl;
 
 endmodule
