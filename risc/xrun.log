@@ -1,0 +1,22 @@
+xrun(64): 20.09-s012: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s012: Started on Aug 13, 2026 at 15:01:00 IST
+xrun
+	-access +rwc
+	prefix_adder_32.v
+	tb_prefix_adder.v
+Recompiling... reason: file './prefix_adder_32.v' is newer than expected.
+	expected: Thu Aug 13 14:10:01 2026
+	actual:   Thu Aug 13 14:11:01 2026
+file: prefix_adder_32.v
+	module worklib.prefix_adder_32:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_prefix_adder
+	Modules w/wo timescales:
+		timescale of worklib.tb_prefix_adder:v = 1ns/1ps
+		timescale of worklib.prefix_adder_32:v = NOTSET
+xmelab: *F,CUMSTS: Timescale directive missing on one or more modules.
+xrun: *E,ELBERR: Error during elaboration (status 2), exiting.
+TOOL:	xrun(64)	20.09-s012: Exiting on Aug 13, 2026 at 15:01:00 IST  (total: 00:00:00)

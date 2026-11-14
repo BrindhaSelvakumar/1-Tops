@@ -1,0 +1,34 @@
+irun(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s086: Started on Jun 24, 2026 at 16:53:30 IST
+irun
+	fetch_stage.v
+	fetch_stage.v
+file: fetch_stage.v
+	module worklib.fetch_stage:v
+		errors: 0, warnings: 0
+file: fetch_stage.v
+module fetch_stage (
+                 |
+ncvlog: *W,RECOME (fetch_stage.v,3|17): recompiling design unit worklib.fetch_stage:v.
+	First compiled from line 3 of fetch_stage.v.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		fetch_stage
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.fetch_stage:v <0x4ce34564>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 1       1
+		Registers:               3       3
+		Scalar wires:            3       -
+		Vectored wires:          6       -
+		Always blocks:           2       2
+		Cont. assignments:       0       9
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.fetch_stage:v
+TOOL:	irun(64)	15.20-s086: Exiting on Jun 24, 2026 at 16:54:16 IST  (total: 00:00:46)

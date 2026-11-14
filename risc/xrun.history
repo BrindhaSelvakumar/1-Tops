@@ -1,0 +1,47 @@
+s1(05Jun2026:11:12:16):  xrun -sv -access risc_core_top.v tb_risc_core.sv 
+s2(05Jun2026:11:13:14):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s3(05Jun2026:11:14:17):  xrun -sv -access +rwc add_32.v alu_32.v alu_ctrl_32.v decode_stage.v execute_stage.v ex_mem_reg.v fetch_stage.v forwarding_unit.v hazard_unit.v id_ex_reg.v if_id_reg.v main_ctrl.v memory_stage.v mem_wb_reg.v m_extension_unit.v prefix_adder_32.v register_f.v risc_core_top.v sign_gen.v writeback_stage.v tb_risc_core.sv 
+s4(05Jun2026:11:16:37):  xrun -sv -access +rwc add_32.v alu_32.v alu_ctrl_32.v decode_stage.v execute_stage.v ex_mem_reg.v fetch_stage.v forwarding_unit.v hazard_unit.v id_ex_reg.v if_id_reg.v main_ctrl.v memory_stage.v mem_wb_reg.v m_extension_unit.v prefix_adder_32.v register_f.v risc_core_top.v sign_gen.v writeback_stage.v tb_risc_core.sv 
+s5(05Jun2026:11:18:28):  xrun -sv -access +rwc add_32.v alu_32.v alu_ctrl_32.v decode_stage.v execute_stage.v ex_mem_reg.v fetch_stage.v forwarding_unit.v hazard_unit.v id_ex_reg.v if_id_reg.v main_ctrl.v memory_stage.v mem_wb_reg.v m_extension_unit.v prefix_adder_32.v register_f.v risc_core_top.v sign_gen.v writeback_stage.v tb_risc_core.sv 
+s6(05Jun2026:11:20:01):  xrun -sv -access +rwc add_32.v alu_32.v alu_ctrl_32.v decode_stage.v execute_stage.v ex_mem_reg.v fetch_stage.v forwarding_unit.v hazard_unit.v id_ex_reg.v if_id_reg.v main_ctrl.v memory_stage.v mem_wb_reg.v m_extension_unit.v prefix_adder_32.v register_f.v risc_core_top.v sign_gen.v writeback_stage.v tb_risc_core.sv 
+s7(05Jun2026:11:22:47):  xrun -sv -access +rwc add_32.v alu_32.v alu_ctrl_32.v decode_stage.v execute_stage.v ex_mem_reg.v fetch_stage.v forwarding_unit.v hazard_unit.v id_ex_reg.v if_id_reg.v main_ctrl.v memory_stage.v mem_wb_reg.v m_extension_unit.v prefix_adder_32.v register_f.v risc_core_top.v sign_gen.v writeback_stage.v tb_risc_core.sv 
+s8(10Jun2026:20:58:46):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s9(10Jun2026:21:00:33):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s10(10Jun2026:21:10:38):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s11(10Jun2026:21:13:38):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s12(10Jun2026:21:16:26):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s13(10Jun2026:21:20:58):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s14(10Jun2026:21:24:38):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s15(10Jun2026:21:27:33):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s16(10Jun2026:21:28:25):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s17(10Jun2026:21:29:49):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s18(10Jun2026:21:33:55):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s19(10Jun2026:21:35:53):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s20(10Jun2026:21:38:11):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s21(10Jun2026:21:39:11):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s22(10Jun2026:21:40:28):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s23(10Jun2026:21:41:58):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s24(10Jun2026:21:42:56):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s25(10Jun2026:21:43:48):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s26(10Jun2026:21:45:10):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s27(10Jun2026:21:46:20):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s28(10Jun2026:21:48:48):  xrun -sv -access +rwc risc_core_top.v tb_risc_core.sv 
+s29(11Jun2026:20:55:57):  xrun -sv fetch_stage.sv fetch_stage_tb.sv -coverage all 
+s30(11Jun2026:20:56:40):  xrun -sv fetch_stage.v fetch_stage_tb.sv -coverage all 
+s31(11Jun2026:21:03:58):  xrun -sv fetch_stage.v fetch_stage_tb.sv -coverage all 
+s32(11Jun2026:21:10:41):  xrun -sv fetch_stage.v fetch_stage_tb.sv -coverage all -covoverwrite 
+s33(11Jun2026:21:17:00):  xrun -sv fetch_stage.v fetch_stage_tb.sv -coverage all -covoverwrite 
+s34(11Jun2026:21:22:30):  xrun -sv fetch_stage.v fetch_stage_tb.sv -coverage all -covoverwrite 
+s35(11Jun2026:21:28:56):  xrun -sv fetch_stage.v fetch_stage_tb.sv -coverage all -covoverwrite 
+s36(11Jun2026:21:33:24):  xrun -sv fetch_stage.v fetch_stage_tb.sv -coverage all -covoverwrite 
+s37(11Jun2026:21:54:23):  xrun -sv sign_gen.v register_f.v main_ctrl.v alu_ctrl_32.v hazard_unit.v decode_stage.v decode_stage_tb.sv -coverage all -covoverwrite 
+s38(12Jun2026:17:37:33):  xrun -sv sign_gen.v register_f.v main_ctrl.v alu_ctrl_32.v hazard_unit.v decode_stage.v decode_stage_tb.sv -coverage all -covoverwrite 
+s39(12Jun2026:17:43:56):  xrun -sv alu_32.v m_extension_unit.v execute_stage.v execute_stage_tb.sv -coverage all -covoverwrite 
+s40(12Jun2026:17:45:20):  xrun -sv alu_32.v m_extension_unit.v execute_stage.v execute_stage_tb.sv -coverage all -covoverwrite 
+s41(13Jun2026:09:59:57):  xrun -sv execute_stage.v execute_stage_tb.sv 
+s42(13Jun2026:10:06:22):  xrun -sv alu_32.v m_extension_unit.v execute_stage.v execute_stage_tb.sv -coverage all -covoverwrite 
+s43(13Jun2026:10:08:38):  xrun -sv alu_32.v m_extension_unit.v execute_stage.v execute_stage_tb.sv -coverage all -covoverwrite 
+s44(13Aug2026:14:08:31):  xrun -access +rwc prefix_adder.v tb_prefix_adder.v 
+s45(13Aug2026:14:09:32):  xrun -access +rwc prefix_adder_32.v tb_prefix_adder.v 
+s46(13Aug2026:14:10:09):  xrun -access +rwc prefix_adder_32.v tb_prefix_adder.v 
+s47(13Aug2026:15:01:00):  xrun -access +rwc prefix_adder_32.v tb_prefix_adder.v 
